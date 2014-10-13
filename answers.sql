@@ -73,3 +73,6 @@ SELECT common_name, melon_type, order_items.quantity, order_items.unit_price, or
 -- Problem 25
 SELECT SUM(order_total) FROM orders WHERE salesperson_id IS NULL
 
+-- Problem 26
+SELECT givenname, surname, SUM(order_total), (SUM(order_total)*.15) AS commission FROM salespeople LEFT JOIN orders ON (orders.salesperson_id = salespeople.id) GROUP BY salespeople.id
+
