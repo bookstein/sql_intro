@@ -70,3 +70,6 @@ SELECT *  FROM order_items WHERE order_id = '2725'
 -- Problem 24
 SELECT common_name, melon_type, order_items.quantity, order_items.unit_price, order_items.total_price FROM melons JOIN order_items ON (melons.id = order_items.melon_id) WHERE order_id = '2725'
 
+-- Problem 25
+SELECT SUM(order_total) FROM orders WHERE salesperson_id IS NULL
+
